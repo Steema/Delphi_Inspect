@@ -1,0 +1,123 @@
+object Form8: TForm8
+  Left = 0
+  Top = 0
+  Color = claNull
+  ClientHeight = 480
+  ClientWidth = 534
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop, iPhone, iPad]
+  OnCreate = Form3DCreate
+  DesignerMobile = False
+  DesignerWidth = 0
+  DesignerHeight = 0
+  DesignerDeviceName = ''
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object Light1: TLight
+    Color = claWhite
+    LightType = Point
+    SpotCutOff = 180.000000000000000000
+    Position.X = 2.825333118438721000
+    Position.Y = -6.095238208770752000
+    Position.Z = -9.755409240722656000
+    RotationAngle.X = 2.302207946777344000
+    RotationAngle.Y = 13.361184120178220000
+    RotationAngle.Z = 28.703514099121090000
+    Width = 1.000000000000000000
+    Height = 1.000000000000000000
+    Depth = 1.000000000000000000
+    Quanternion = 
+      '(-0.0604174137115479,-0.604204535484314,-0.701087057590485,-0.37' +
+      '3846769332886)'
+  end
+  object Light2: TLight
+    Color = claWhite
+    LightType = Point
+    SpotCutOff = 180.000000000000000000
+    Position.X = -7.850748062133789000
+    Position.Y = 4.827777385711670000
+    Width = 1.000000000000000000
+    Height = 1.000000000000000000
+    Depth = 1.000000000000000000
+  end
+  object Text3D2: TText3D
+    Position.X = 0.034194469451904300
+    Position.Y = 6.250349044799805000
+    Position.Z = 3.523487091064453000
+    RotationAngle.Z = 3.792045593261719000
+    Width = 16.000000000000000000
+    Height = 3.000000000000000000
+    Depth = 0.699999988079071000
+    Font.Family = 'Courier New'
+    Font.Style = [fsBold]
+    Text = 'Inspect'
+    WordWrap = False
+    Flatness = 1.000000000000000000
+    Sides = [Front, Back, Shaft]
+    MaterialShaftSource = LightMaterialSource3
+    MaterialSource = LightMaterialSource2
+    Quanternion = '(0,0,0.0330854654312134,0.999452412128448)'
+  end
+  object Text3D1: TText3D
+    Position.X = 1.071088552474976000
+    Position.Y = -1.178209781646729000
+    Position.Z = 2.658529281616211000
+    RotationAngle.Y = 340.406738281250000000
+    Width = 16.000000000000000000
+    Height = 5.634137153625488000
+    Depth = 1.200004220008850000
+    Text = 'Delphi'
+    WordWrap = False
+    Flatness = 1.000000000000000000
+    Sides = [Front, Back, Shaft]
+    MaterialShaftSource = LightMaterialSource5
+    MaterialSource = LightMaterialSource1
+    Quanternion = '(0,0.17015166580677,0,-0.985418081283569)'
+  end
+  object LightMaterialSource1: TLightMaterialSource
+    Diffuse = claPeru
+    Ambient = xFF202020
+    Emissive = claNull
+    Specular = xFF606060
+    Shininess = 30
+    Left = 304
+    Top = 224
+  end
+  object LightMaterialSource2: TLightMaterialSource
+    Diffuse = claDarkorange
+    Ambient = xFF202020
+    Emissive = claNull
+    Specular = xFF606060
+    Shininess = 30
+    Left = 312
+    Top = 232
+  end
+  object LightMaterialSource3: TLightMaterialSource
+    Diffuse = claIndigo
+    Ambient = xFF202020
+    Emissive = claNull
+    Specular = xFF606060
+    Shininess = 30
+    Left = 320
+    Top = 240
+  end
+  object LightMaterialSource4: TLightMaterialSource
+    Diffuse = claPaleturquoise
+    Ambient = xFF202020
+    Emissive = claNull
+    Specular = xFF606060
+    Shininess = 30
+    Left = 328
+    Top = 248
+  end
+  object LightMaterialSource5: TLightMaterialSource
+    Diffuse = claChocolate
+    Ambient = xFF202020
+    Emissive = claNull
+    Specular = xFF606060
+    Shininess = 30
+    Left = 336
+    Top = 256
+  end
+end

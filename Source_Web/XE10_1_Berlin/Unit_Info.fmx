@@ -1,0 +1,892 @@
+object SystemInfoForm: TSystemInfoForm
+  Left = 0
+  Top = 0
+  Caption = 'Delphi System Info'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnResize = FormResize
+  OnShow = FormShow
+  OnTouch = FormTouch
+  DesignerMasterStyle = 2
+  object TabMain: TTabControl
+    Align = Client
+    FullSize = True
+    Size.Width = 640.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 4
+    TabOrder = 0
+    TabPosition = Top
+    OnChange = TabMainChange
+    Sizes = (
+      640s
+      431s
+      640s
+      431s
+      640s
+      431s
+      640s
+      431s
+      640s
+      431s)
+    object TabItem1: TTabItem
+      CustomIcon.Height = 24
+      CustomIcon.Width = 24
+      CustomIcon = <
+        item
+          FileName = 
+            'C:\Program Files (x86)\Embarcadero\Studio\15.0\bin\delphi_PROJEC' +
+            'TICON.ico'
+        end>
+      IsSelected = False
+      Size.Width = 128.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Delphi'
+      ExplicitSize.cx = 128.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object ToolBar1: TToolBar
+        Size.Width = 640.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Button1: TButton
+          Align = Left
+          Size.Width = 44.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'refreshtoolbutton'
+          TabOrder = 0
+          Text = 'Refresh'
+          OnClick = Button1Click
+        end
+        object Button5: TButton
+          Align = Right
+          Position.X = 596.000000000000000000
+          Size.Width = 44.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'actiontoolbutton'
+          TabOrder = 2
+          Text = 'Share'
+          OnClick = Button5Click
+        end
+      end
+      object TabDelphi: TTabControl
+        Align = Client
+        FullSize = True
+        Size.Width = 640.000000000000000000
+        Size.Height = 387.000000000000000000
+        Size.PlatformDefault = False
+        TabHeight = 49.000000000000000000
+        TabIndex = 0
+        TabOrder = 1
+        TabPosition = Top
+        Sizes = (
+          640s
+          338s
+          640s
+          338s
+          640s
+          338s
+          640s
+          338s
+          640s
+          338s
+          640s
+          338s
+          640s
+          338s)
+        object TabSystem: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = True
+          Size.Width = 91.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'System'
+          ExplicitSize.cx = 91.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          object MemoSystem: TMemo
+            Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+            DataDetectorTypes = []
+            ReadOnly = True
+            Align = Client
+            Size.Width = 640.000000000000000000
+            Size.Height = 338.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Viewport.Width = 632.000000000000000000
+            Viewport.Height = 330.000000000000000000
+          end
+        end
+        object TabItem5: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 91.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Math'
+          ExplicitSize.cx = 92.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          object MemoMath: TMemo
+            Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+            DataDetectorTypes = []
+            ReadOnly = True
+            Align = Client
+            Size.Width = 640.000000000000000000
+            Size.Height = 338.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Viewport.Width = 632.000000000000000000
+            Viewport.Height = 330.000000000000000000
+          end
+        end
+        object TabPaths: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 91.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Paths'
+          ExplicitSize.cx = 91.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          object MemoPaths: TMemo
+            Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+            DataDetectorTypes = []
+            ReadOnly = True
+            Align = Client
+            Size.Width = 640.000000000000000000
+            Size.Height = 338.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Viewport.Width = 632.000000000000000000
+            Viewport.Height = 330.000000000000000000
+          end
+        end
+        object TabLocale: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 91.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Locale'
+          ExplicitSize.cx = 92.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          object MemoLocale: TMemo
+            Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+            DataDetectorTypes = []
+            ReadOnly = True
+            Align = Client
+            Size.Width = 640.000000000000000000
+            Size.Height = 338.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Viewport.Width = 632.000000000000000000
+            Viewport.Height = 330.000000000000000000
+          end
+        end
+        object TabOS: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 91.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'O.S.'
+          ExplicitSize.cx = 91.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          object MemoOS: TMemo
+            Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+            DataDetectorTypes = []
+            ReadOnly = True
+            Align = Client
+            Size.Width = 640.000000000000000000
+            Size.Height = 338.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Viewport.Width = 632.000000000000000000
+            Viewport.Height = 330.000000000000000000
+          end
+        end
+        object TabHard: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 91.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Hardware'
+          ExplicitSize.cx = 92.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          object MemoHard: TMemo
+            Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+            DataDetectorTypes = []
+            ReadOnly = True
+            Align = Client
+            Size.Width = 640.000000000000000000
+            Size.Height = 338.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Viewport.Width = 632.000000000000000000
+            Viewport.Height = 330.000000000000000000
+          end
+        end
+        object TabDatabase: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 94.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Database'
+          ExplicitSize.cx = 91.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          object MemoDatabase: TMemo
+            Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+            DataDetectorTypes = []
+            ReadOnly = True
+            Align = Client
+            Size.Width = 640.000000000000000000
+            Size.Height = 338.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Viewport.Width = 632.000000000000000000
+            Viewport.Height = 330.000000000000000000
+          end
+        end
+      end
+    end
+    object TabFireMonkey: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 128.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'FireMonkey'
+      ExplicitSize.cx = 128.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object ToolBar2: TToolBar
+        Size.Width = 640.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Button2: TButton
+          Align = Left
+          Size.Width = 44.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'refreshtoolbutton'
+          TabOrder = 0
+          Text = 'Refresh'
+          OnClick = Button2Click
+        end
+      end
+      object TabControlFMX: TTabControl
+        Align = Client
+        FullSize = True
+        Size.Width = 640.000000000000000000
+        Size.Height = 387.000000000000000000
+        Size.PlatformDefault = False
+        TabHeight = 49.000000000000000000
+        TabIndex = 0
+        TabOrder = 1
+        TabPosition = PlatformDefault
+        Sizes = (
+          640s
+          338s
+          640s
+          338s)
+        object TabFMXInfo: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = True
+          Size.Width = 320.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Information'
+          ExplicitSize.cx = 320.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          object MemoFireMonkey: TMemo
+            Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+            DataDetectorTypes = []
+            ReadOnly = True
+            Align = Client
+            Size.Width = 640.000000000000000000
+            Size.Height = 338.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            Viewport.Width = 632.000000000000000000
+            Viewport.Height = 330.000000000000000000
+          end
+        end
+        object TabGesture: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 320.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Gesture Tester'
+          ExplicitSize.cx = 320.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          object ChartGesture: TChart
+            Touch.InteractiveGestures = [Zoom, Pan, Rotate, TwoFingerTap, PressAndTap, LongTap, DoubleTap]
+            OnTap = ChartGestureTap
+            Foot.Font.StyleExt = {00040000000200000004000000}
+            Legend.Title.Font.StyleExt = {00070000000000000004000000}
+            Legend.Visible = False
+            SubFoot.Font.StyleExt = {00040000000200000004000000}
+            Title.Text.Strings = (
+              'Tap and Drag Here ')
+            AxisVisible = False
+            View3D = False
+            View3DWalls = False
+            Zoom.Brush.Kind = None
+            Zoom.Pen.Fill.Color = claSilver
+            OnAfterDraw = ChartGestureAfterDraw
+            Align = Client
+            Color = claWhite
+            TabOrder = 0
+            Size.Width = 640.000000000000000000
+            Size.Height = 338.000000000000000000
+            Size.PlatformDefault = False
+            ColorPaletteIndex = 13
+          end
+        end
+      end
+    end
+    object TabMemory: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 128.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Memory'
+      ExplicitSize.cx = 128.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object Image1: TImage
+        MultiResBitmap = <
+          item
+          end>
+        Align = Client
+        Size.Width = 640.000000000000000000
+        Size.Height = 387.000000000000000000
+        Size.PlatformDefault = False
+        WrapMode = Stretch
+      end
+      object ToolBar3: TToolBar
+        Size.Width = 640.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object CheckBox1: TCheckBox
+          IsChecked = True
+          Position.X = 16.000000000000000000
+          Position.Y = 16.000000000000000000
+          Size.Width = 145.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Text = 'Show Unallocated'
+          OnChange = CheckBox1Change
+        end
+        object CheckBox2: TCheckBox
+          Position.X = 168.000000000000000000
+          Position.Y = 16.000000000000000000
+          Size.Width = 201.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Show SysReserved'
+          OnChange = CheckBox2Change
+        end
+      end
+    end
+    object TabBenchmarks: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 128.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Benchmarks'
+      ExplicitSize.cx = 128.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object TabControlBench: TTabControl
+        Align = Client
+        FullSize = True
+        Size.Width = 640.000000000000000000
+        Size.Height = 431.000000000000000000
+        Size.PlatformDefault = False
+        TabHeight = 49.000000000000000000
+        TabIndex = 2
+        TabOrder = 0
+        TabPosition = Top
+        Sizes = (
+          640s
+          382s
+          640s
+          382s
+          640s
+          382s)
+        object TabCanvasBench: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 213.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Canvas'
+          ExplicitSize.cx = 213.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          object ToolBar5: TToolBar
+            Size.Width = 640.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object Button4: TButton
+              Position.X = 8.000000000000000000
+              Position.Y = 6.000000000000000000
+              Size.Width = 80.000000000000000000
+              Size.Height = 28.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 1
+              Text = 'Run'
+              OnClick = Button4Click
+              OnMouseDown = Button4MouseDown
+            end
+            object CheckBox3D: TCheckBox
+              IsChecked = True
+              Position.X = 120.000000000000000000
+              Position.Y = 12.000000000000000000
+              Size.Width = 89.000000000000000000
+              Size.Height = 19.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 4
+              Text = '3D'
+              Visible = False
+              OnChange = CheckBox3DChange
+            end
+            object ButtonShareChart: TButton
+              Align = Right
+              Margins.Top = 5.000000000000000000
+              Margins.Right = 10.000000000000000000
+              Margins.Bottom = 5.000000000000000000
+              Position.X = 550.000000000000000000
+              Position.Y = 5.000000000000000000
+              Size.Width = 80.000000000000000000
+              Size.Height = 30.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 2
+              Text = 'Share'
+              Visible = False
+              OnClick = ButtonShareChartClick
+            end
+          end
+          object Chart1: TChart
+            BackWall.Size = 3
+            BottomWall.Size = 3
+            Foot.Font.StyleExt = {00040000000200000004000000}
+            LeftWall.Size = 3
+            Legend.Title.Font.StyleExt = {00070000000000000004000000}
+            RightWall.Size = 3
+            SubFoot.Font.StyleExt = {00040000000200000004000000}
+            Title.Text.Strings = (
+              'Canvas Benchmark')
+            Zoom.Brush.Kind = None
+            Zoom.Pen.Fill.Color = claSilver
+            OnAfterDraw = Chart1AfterDraw
+            Align = Client
+            Color = claWhite
+            TabOrder = 1
+            Visible = False
+            Size.Width = 640.000000000000000000
+            Size.Height = 255.000000000000000000
+            Size.PlatformDefault = False
+            ColorPaletteIndex = 13
+          end
+        end
+        object TabBenchRTL: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 213.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'System'
+          ExplicitSize.cx = 214.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          object ToolBar4: TToolBar
+            Size.Width = 640.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object Button3: TButton
+              Position.X = 8.000000000000000000
+              Position.Y = 6.000000000000000000
+              Size.Width = 80.000000000000000000
+              Size.Height = 28.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 1
+              Text = 'Run'
+              OnClick = Button3Click
+              OnMouseDown = Button4MouseDown
+            end
+            object CheckBox3DSystem: TCheckBox
+              IsChecked = True
+              Position.X = 120.000000000000000000
+              Position.Y = 12.000000000000000000
+              Size.Width = 89.000000000000000000
+              Size.Height = 19.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 4
+              Text = '3D'
+              Visible = False
+              OnChange = CheckBox3DSystemChange
+            end
+            object ButtonShareChartSystem: TButton
+              Align = Right
+              Margins.Top = 5.000000000000000000
+              Margins.Right = 10.000000000000000000
+              Margins.Bottom = 5.000000000000000000
+              Position.X = 550.000000000000000000
+              Position.Y = 5.000000000000000000
+              Size.Width = 80.000000000000000000
+              Size.Height = 30.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 2
+              Text = 'Share'
+              Visible = False
+              OnClick = ButtonShareChartSystemClick
+            end
+          end
+          object Chart2: TChart
+            BackWall.Size = 3
+            BottomWall.Size = 3
+            Foot.Font.StyleExt = {00040000000200000004000000}
+            LeftWall.Size = 3
+            Legend.Title.Font.StyleExt = {00070000000000000004000000}
+            RightWall.Size = 3
+            SubFoot.Font.StyleExt = {00040000000200000004000000}
+            Title.Text.Strings = (
+              'TChart')
+            Zoom.Brush.Kind = None
+            Zoom.Pen.Fill.Color = claSilver
+            Align = Client
+            Color = claWhite
+            TabOrder = 1
+            Visible = False
+            Size.Width = 400.000000000000000000
+            Size.Height = 250.000000000000000000
+            Size.PlatformDefault = False
+            ColorPaletteIndex = 13
+          end
+        end
+        object TabThreading: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = True
+          Size.Width = 214.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Threading'
+          ExplicitSize.cx = 213.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          object ToolBar6: TToolBar
+            Size.Width = 640.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object Button6: TButton
+              Position.X = 8.000000000000000000
+              Position.Y = 6.000000000000000000
+              Size.Width = 80.000000000000000000
+              Size.Height = 28.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 1
+              Text = 'Run'
+              OnClick = Button6Click
+              OnMouseDown = Button4MouseDown
+            end
+            object CheckBox3DThreading: TCheckBox
+              IsChecked = True
+              Position.X = 120.000000000000000000
+              Position.Y = 12.000000000000000000
+              Size.Width = 89.000000000000000000
+              Size.Height = 19.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 4
+              Text = '3D'
+              Visible = False
+              OnChange = CheckBox3DThreadingChange
+            end
+            object ButtonShareChartThreading: TButton
+              Align = Right
+              Margins.Top = 5.000000000000000000
+              Margins.Right = 10.000000000000000000
+              Margins.Bottom = 5.000000000000000000
+              Position.X = 550.000000000000000000
+              Position.Y = 5.000000000000000000
+              Size.Width = 80.000000000000000000
+              Size.Height = 30.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 2
+              Text = 'Share'
+              Visible = False
+              OnClick = ButtonShareChartThreadingClick
+            end
+          end
+          object Chart3: TChart
+            Foot.Font.StyleExt = {00040000000200000004000000}
+            Foot.Text.Strings = (
+              'CPUs')
+            Legend.Title.Font.StyleExt = {00070000000000000004000000}
+            SubFoot.Font.StyleExt = {00040000000200000004000000}
+            Title.Text.Strings = (
+              'Multi-CPU parallel speed')
+            View3D = False
+            Zoom.Brush.Kind = None
+            Zoom.Pen.Fill.Color = claSilver
+            Align = Client
+            Color = claWhite
+            TabOrder = 1
+            Size.Width = 640.000000000000000000
+            Size.Height = 338.000000000000000000
+            Size.PlatformDefault = False
+            ColorPaletteIndex = 13
+          end
+        end
+      end
+    end
+    object TabAbout: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 128.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'tabitemcontacts'
+      TabOrder = 0
+      Text = 'About'
+      ExplicitSize.cx = 128.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object ToolBarAbout: TToolBar
+        Size.Width = 640.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Gyroscope: TCheckBox
+          Position.X = 328.000000000000000000
+          Position.Y = 8.000000000000000000
+          Size.Width = 120.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Text = 'Gyroscope'
+          Visible = False
+          OnChange = GyroscopeChange
+        end
+        object ButtonDownload: TButton
+          Cursor = crHandPoint
+          Position.X = 16.000000000000000000
+          Position.Y = 8.000000000000000000
+          Size.Width = 281.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          Text = 'Download this app source code'
+          OnClick = ButtonDownloadClick
+        end
+      end
+      object TabControlAbout: TTabControl
+        Align = Client
+        FullSize = True
+        Size.Width = 640.000000000000000000
+        Size.Height = 387.000000000000000000
+        Size.PlatformDefault = False
+        TabHeight = 49.000000000000000000
+        TabIndex = 1
+        TabOrder = 1
+        TabPosition = PlatformDefault
+        OnChange = TabControlAboutChange
+        Sizes = (
+          640s
+          338s
+          640s
+          338s)
+        object TabAboutBox: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 320.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'TeeChart Pro'
+          ExplicitSize.cx = 320.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          object Viewport3D1: TViewport3D
+            Align = Client
+            Size.Width = 640.000000000000000000
+            Size.Height = 338.000000000000000000
+            Size.PlatformDefault = False
+            OnResize = Viewport3D1Resize
+          end
+        end
+        object TabLocation: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = True
+          Size.Width = 320.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Your Location'
+          ExplicitSize.cx = 320.000000000000000000
+          ExplicitSize.cy = 49.000000000000000000
+          object ChartLocation: TChart
+            Foot.Font.StyleExt = {00040000000200000004000000}
+            Legend.Title.Font.StyleExt = {00070000000000000004000000}
+            SubFoot.Font.StyleExt = {00040000000200000004000000}
+            Title.Text.Strings = (
+              'TChart')
+            Title.Visible = False
+            OnClickSeries = ChartLocationClickSeries
+            View3D = False
+            Zoom.Brush.Kind = None
+            Zoom.Pen.Fill.Color = claSilver
+            Align = Client
+            Color = claWhite
+            TabOrder = 0
+            Size.Width = 640.000000000000000000
+            Size.Height = 288.000000000000000000
+            Size.PlatformDefault = False
+            OnDblClick = ChartLocationDblClick
+            ColorPaletteIndex = 13
+          end
+          object Layout1: TLayout
+            Align = Top
+            Size.Width = 640.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            object Button7: TButton
+              Position.X = 16.000000000000000000
+              Position.Y = 16.000000000000000000
+              Size.Width = 161.000000000000000000
+              Size.Height = 22.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              Text = 'See full World'
+              OnClick = Button7Click
+            end
+          end
+        end
+      end
+    end
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 1
+    OnTimer = Timer1Timer
+    Left = 152
+    Top = 144
+  end
+  object LocationSensor1: TLocationSensor
+    OnLocationChanged = LocationSensor1LocationChanged
+    Left = 304
+    Top = 288
+  end
+  object MotionSensor1: TMotionSensor
+    Left = 472
+    Top = 144
+  end
+  object OrientationSensor1: TOrientationSensor
+    Left = 312
+    Top = 168
+  end
+  object TetheringManager1: TTetheringManager
+    Text = 'TetheringManager1'
+    AllowedAdapters = 'Bluetooth'
+    Left = 480
+    Top = 208
+  end
+  object TetheringAppProfile1: TTetheringAppProfile
+    Manager = TetheringManager1
+    Text = 'TetheringAppProfile1'
+    Actions = <>
+    Resources = <>
+    Left = 488
+    Top = 280
+  end
+  object TetheringManager2: TTetheringManager
+    Text = 'TetheringManager2'
+    AllowedAdapters = 'Network'
+    Left = 304
+    Top = 224
+  end
+end

@@ -1,0 +1,539 @@
+object SystemInfoForm: TSystemInfoForm
+  Left = 0
+  Top = 0
+  Caption = 'Delphi System Info'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop, iPhone, iPad]
+  OnCreate = FormCreate
+  OnResize = FormResize
+  OnShow = FormShow
+  DesignerMobile = False
+  DesignerWidth = 0
+  DesignerHeight = 0
+  DesignerDeviceName = ''
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object TabMain: TTabControl
+    Align = Client
+    Height = 480.000000000000000000
+    TabIndex = 0
+    TabOrder = 0
+    Width = 640.000000000000000000
+    OnChange = TabMainChange
+    object TabItem1: TTabItem
+      CustomIcon = <
+        item
+        end>
+      Height = 24.000000000000000000
+      IsSelected = True
+      TabOrder = 0
+      Text = 'Delphi'
+      Width = 51.000000000000000000
+      object ToolBar1: TToolBar
+        Height = 40.000000000000000000
+        TabOrder = 0
+        Width = 640.000000000000000000
+        object Button1: TButton
+          Height = 32.000000000000000000
+          Position.X = 8.000000000000000000
+          Position.Y = 4.000000000000000000
+          TabOrder = 0
+          Text = 'Refresh'
+          Width = 80.000000000000000000
+          OnClick = Button1Click
+        end
+        object Button5: TButton
+          Align = Right
+          Height = 30.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 550.000000000000000000
+          Position.Y = 5.000000000000000000
+          TabOrder = 1
+          Text = 'Share'
+          Width = 80.000000000000000000
+          OnClick = Button5Click
+        end
+      end
+      object TabDelphi: TTabControl
+        Align = Client
+        Height = 416.000000000000000000
+        TabIndex = 0
+        TabOrder = 1
+        Width = 640.000000000000000000
+        object TabSystem: TTabItem
+          CustomIcon = <
+            item
+            end>
+          Height = 24.000000000000000000
+          IsSelected = True
+          TabOrder = 0
+          Text = 'System'
+          Width = 54.000000000000000000
+          object MemoSystem: TMemo
+            Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+            Align = Client
+            Height = 392.000000000000000000
+            TabOrder = 0
+            Width = 640.000000000000000000
+            ReadOnly = True
+          end
+        end
+        object TabItem5: TTabItem
+          CustomIcon = <
+            item
+            end>
+          Height = 24.000000000000000000
+          IsSelected = False
+          TabOrder = 0
+          Text = 'Math'
+          Width = 44.000000000000000000
+          object MemoMath: TMemo
+            Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+            Align = Client
+            Height = 392.000000000000000000
+            TabOrder = 0
+            Width = 640.000000000000000000
+            ReadOnly = True
+          end
+        end
+        object TabPaths: TTabItem
+          CustomIcon = <
+            item
+            end>
+          Height = 24.000000000000000000
+          IsSelected = False
+          TabOrder = 0
+          Text = 'Paths'
+          Width = 46.000000000000000000
+          object MemoPaths: TMemo
+            Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+            Align = Client
+            Height = 392.000000000000000000
+            TabOrder = 0
+            Width = 640.000000000000000000
+            ReadOnly = True
+          end
+        end
+        object TabLocale: TTabItem
+          CustomIcon = <
+            item
+            end>
+          Height = 24.000000000000000000
+          IsSelected = False
+          TabOrder = 0
+          Text = 'Locale'
+          Width = 51.000000000000000000
+          object MemoLocale: TMemo
+            Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+            Align = Client
+            Height = 392.000000000000000000
+            TabOrder = 0
+            Width = 640.000000000000000000
+            ReadOnly = True
+          end
+        end
+        object TabOS: TTabItem
+          CustomIcon = <
+            item
+            end>
+          Height = 24.000000000000000000
+          IsSelected = False
+          TabOrder = 0
+          Text = 'O.S.'
+          Width = 37.000000000000000000
+          object MemoOS: TMemo
+            Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+            Align = Client
+            Height = 392.000000000000000000
+            TabOrder = 0
+            Width = 640.000000000000000000
+            ReadOnly = True
+          end
+        end
+        object TabHard: TTabItem
+          CustomIcon = <
+            item
+            end>
+          Height = 24.000000000000000000
+          IsSelected = False
+          TabOrder = 0
+          Text = 'Hardware'
+          Width = 68.000000000000000000
+          object MemoHard: TMemo
+            Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+            Align = Client
+            Height = 392.000000000000000000
+            TabOrder = 0
+            Width = 640.000000000000000000
+            ReadOnly = True
+          end
+        end
+        object TabDB: TTabItem
+          CustomIcon = <
+            item
+            end>
+          Height = 24.000000000000000000
+          IsSelected = False
+          TabOrder = 0
+          Text = 'Database'
+          Width = 66.000000000000000000
+          object MemoDB: TMemo
+            Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+            Align = Client
+            Height = 392.000000000000000000
+            TabOrder = 0
+            Width = 640.000000000000000000
+            ReadOnly = True
+          end
+        end
+      end
+    end
+    object TabFiremonkey: TTabItem
+      CustomIcon = <
+        item
+        end>
+      Height = 24.000000000000000000
+      IsSelected = False
+      TabOrder = 0
+      Text = 'FireMonkey'
+      Width = 79.000000000000000000
+      object ToolBar2: TToolBar
+        Height = 40.000000000000000000
+        TabOrder = 0
+        Width = 640.000000000000000000
+        object Button2: TButton
+          Height = 32.000000000000000000
+          Position.X = 8.000000000000000000
+          Position.Y = 4.000000000000000000
+          TabOrder = 0
+          Text = 'Refresh'
+          Width = 80.000000000000000000
+          OnClick = Button2Click
+        end
+      end
+      object MemoFireMonkey: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        Align = Client
+        Height = 416.000000000000000000
+        TabOrder = 1
+        Width = 640.000000000000000000
+        ReadOnly = True
+      end
+    end
+    object TabMemory: TTabItem
+      CustomIcon = <
+        item
+        end>
+      Height = 24.000000000000000000
+      IsSelected = False
+      TabOrder = 0
+      Text = 'Memory'
+      Width = 62.000000000000000000
+      object Image1: TImage
+        MultiResBitmap = <
+          item
+          end>
+        Align = Client
+        Height = 416.000000000000000000
+        Width = 640.000000000000000000
+        WrapMode = Stretch
+      end
+      object ToolBar3: TToolBar
+        Height = 40.000000000000000000
+        TabOrder = 1
+        Width = 640.000000000000000000
+        object CheckBox1: TCheckBox
+          Height = 19.000000000000000000
+          IsChecked = True
+          Position.X = 16.000000000000000000
+          Position.Y = 16.000000000000000000
+          TabOrder = 1
+          Text = 'Show Unallocated'
+          Width = 145.000000000000000000
+          OnChange = CheckBox1Change
+        end
+        object CheckBox2: TCheckBox
+          Height = 19.000000000000000000
+          Position.X = 168.000000000000000000
+          Position.Y = 16.000000000000000000
+          TabOrder = 0
+          Text = 'Show SysReserved'
+          Width = 201.000000000000000000
+          OnChange = CheckBox2Change
+        end
+      end
+    end
+    object TabBenchmarks: TTabItem
+      CustomIcon = <
+        item
+        end>
+      Height = 24.000000000000000000
+      IsSelected = False
+      TabOrder = 0
+      Text = 'Benchmark'
+      Width = 76.000000000000000000
+      object TabControlBench: TTabControl
+        Align = Client
+        Height = 456.000000000000000000
+        TabIndex = 0
+        TabOrder = 0
+        Width = 640.000000000000000000
+        object TabCanvasBench: TTabItem
+          CustomIcon = <
+            item
+            end>
+          Height = 24.000000000000000000
+          IsSelected = True
+          TabOrder = 0
+          Text = 'Canvas'
+          Width = 54.000000000000000000
+          object ToolBar5: TToolBar
+            Height = 40.000000000000000000
+            TabOrder = 0
+            Width = 640.000000000000000000
+            object Button4: TButton
+              Height = 29.000000000000000000
+              Position.X = 8.000000000000000000
+              Position.Y = 4.000000000000000000
+              TabOrder = 0
+              Text = 'Run'
+              Width = 80.000000000000000000
+              OnClick = Button4Click
+              OnMouseDown = Button4MouseDown
+            end
+            object CheckBox3D: TCheckBox
+              Height = 19.000000000000000000
+              IsChecked = True
+              Position.X = 120.000000000000000000
+              Position.Y = 8.000000000000000000
+              TabOrder = 3
+              Text = '3D'
+              Visible = False
+              Width = 65.000000000000000000
+              OnChange = CheckBox3DChange
+            end
+            object ButtonShareChart: TButton
+              Align = Right
+              Height = 30.000000000000000000
+              Margins.Top = 5.000000000000000000
+              Margins.Right = 10.000000000000000000
+              Margins.Bottom = 5.000000000000000000
+              Position.X = 550.000000000000000000
+              Position.Y = 5.000000000000000000
+              TabOrder = 1
+              Text = 'Share'
+              Visible = False
+              Width = 80.000000000000000000
+              OnClick = ButtonShareChartClick
+            end
+          end
+          object Chart1: TChart
+            Height = 262.000000000000000000
+            Width = 488.000000000000000000
+            BackWall.Size = 3
+            BottomWall.Size = 3
+            LeftWall.Size = 3
+            RightWall.Size = 3
+            Title.Text.Strings = (
+              'TChart')
+            Zoom.Brush.Kind = None
+            Zoom.Pen.Fill.Color = claSilver
+            OnAfterDraw = Chart1AfterDraw
+            Align = Client
+            Color = claWhite
+            TabOrder = 1
+            Visible = False
+            ColorPaletteIndex = 13
+          end
+        end
+        object TabBenchRTL: TTabItem
+          CustomIcon = <
+            item
+            end>
+          Height = 24.000000000000000000
+          IsSelected = False
+          TabOrder = 0
+          Text = 'System'
+          Width = 54.000000000000000000
+          object ToolBar6: TToolBar
+            Height = 40.000000000000000000
+            TabOrder = 0
+            Width = 640.000000000000000000
+            object Button6: TButton
+              Height = 29.000000000000000000
+              Position.X = 8.000000000000000000
+              Position.Y = 4.000000000000000000
+              TabOrder = 0
+              Text = 'Run'
+              Width = 80.000000000000000000
+              OnClick = Button6Click
+              OnMouseDown = Button4MouseDown
+            end
+            object CheckBox3: TCheckBox
+              Height = 19.000000000000000000
+              IsChecked = True
+              Position.X = 120.000000000000000000
+              Position.Y = 8.000000000000000000
+              TabOrder = 3
+              Text = '3D'
+              Visible = False
+              Width = 65.000000000000000000
+              OnChange = CheckBox3Change
+            end
+            object ButtonShareChartSystem: TButton
+              Align = Right
+              Height = 30.000000000000000000
+              Margins.Top = 5.000000000000000000
+              Margins.Right = 10.000000000000000000
+              Margins.Bottom = 5.000000000000000000
+              Position.X = 550.000000000000000000
+              Position.Y = 5.000000000000000000
+              TabOrder = 1
+              Text = 'Share'
+              Visible = False
+              Width = 80.000000000000000000
+              OnClick = ButtonShareChartSystemClick
+            end
+          end
+          object Chart2: TChart
+            Height = 262.000000000000000000
+            Width = 488.000000000000000000
+            BackWall.Size = 3
+            BottomWall.Size = 3
+            LeftWall.Size = 3
+            RightWall.Size = 3
+            Title.Text.Strings = (
+              'TChart')
+            Zoom.Brush.Kind = None
+            Zoom.Pen.Fill.Color = claSilver
+            Align = Client
+            Color = claWhite
+            TabOrder = 1
+            Visible = False
+            ColorPaletteIndex = 13
+          end
+        end
+      end
+    end
+    object TabAbout: TTabItem
+      CustomIcon = <
+        item
+        end>
+      Height = 24.000000000000000000
+      IsSelected = False
+      TabOrder = 0
+      Text = 'About'
+      Width = 49.000000000000000000
+      object ToolBar4: TToolBar
+        Height = 40.000000000000000000
+        TabOrder = 0
+        Width = 640.000000000000000000
+        object Gyroscope: TCheckBox
+          Height = 19.000000000000000000
+          Position.X = 328.000000000000000000
+          Position.Y = 8.000000000000000000
+          TabOrder = 1
+          Text = 'Gyroscope'
+          Visible = False
+          Width = 120.000000000000000000
+          OnChange = GyroscopeChange
+        end
+        object Button3: TButton
+          Cursor = crHandPoint
+          Height = 28.000000000000000000
+          Position.X = 16.000000000000000000
+          Position.Y = 5.000000000000000000
+          TabOrder = 3
+          Text = 'Download this app source code'
+          Width = 281.000000000000000000
+          OnClick = Button3Click
+        end
+      end
+      object TabControlAbout: TTabControl
+        Align = Client
+        Height = 416.000000000000000000
+        TabIndex = 0
+        TabOrder = 1
+        Width = 640.000000000000000000
+        OnChange = TabControlAboutChange
+        object TabItem2: TTabItem
+          CustomIcon = <
+            item
+            end>
+          Height = 24.000000000000000000
+          IsSelected = True
+          TabOrder = 0
+          Text = 'TeeChart Pro'
+          Width = 85.000000000000000000
+          object Viewport3D1: TViewport3D
+            Align = Client
+            Height = 392.000000000000000000
+            Width = 640.000000000000000000
+          end
+        end
+        object TabLocation: TTabItem
+          CustomIcon = <
+            item
+            end>
+          Height = 24.000000000000000000
+          IsSelected = False
+          TabOrder = 0
+          Text = 'Your Location'
+          Width = 90.000000000000000000
+          object ChartLocation: TChart
+            Height = 392.000000000000000000
+            Width = 640.000000000000000000
+            Title.Text.Strings = (
+              'TChart')
+            Title.Visible = False
+            View3D = False
+            Zoom.Brush.Kind = None
+            Zoom.Pen.Fill.Color = claSilver
+            Align = Client
+            Color = claWhite
+            TabOrder = 0
+            ColorPaletteIndex = 13
+          end
+        end
+      end
+    end
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 1
+    OnTimer = Timer1Timer
+    Left = 304
+    Top = 224
+  end
+  object TetheringManager1: TTetheringManager
+    Text = 'TetheringManager1'
+    Left = 296
+    Top = 280
+  end
+  object TetheringAppProfile1: TTetheringAppProfile
+    Manager = TetheringManager1
+    Text = 'TetheringAppProfile1'
+    Actions = <>
+    Resources = <>
+    Left = 368
+    Top = 128
+  end
+  object LocationSensor1: TLocationSensor
+    OnLocationChanged = LocationSensor1LocationChanged
+    Left = 136
+    Top = 176
+  end
+  object MotionSensor1: TMotionSensor
+    Left = 137
+    Top = 232
+  end
+  object OrientationSensor1: TOrientationSensor
+    Left = 137
+    Top = 120
+  end
+end
