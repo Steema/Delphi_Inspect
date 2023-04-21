@@ -1,5 +1,5 @@
 # Delphi_Inspect
-Delphi Firemonkey Canvas benchmarking and general information
+Delphi Firemonkey Canvas benchmarking and general information.  Made with [TeeChart](https://www.steema.com).
 
 For Embarcadero RAD Studio version XE6 to [XE11.3 Alexandria](https://www.embarcadero.com/es/products/rad-studio/whats-new-in-11-alexandria).
 
@@ -13,3 +13,6 @@ It also provides speed benchmarking of some classes like Canvas, Memory, Math, A
 Can be useful to compare speed of different Firemonkey graphical canvases, like [Skia (Skia4Delphi)](https://skia4delphi.org) vs Direct2D etc.
 
 ![TeeChart Firemonkey Canvas Benchmark](https://github.com/Steema/Delphi_Inspect/blob/main/Images/TeeChart_Skia_Benchmark_Screenshot.png?raw=true)
+
+[ ![TeeChart Pro](https://github.com/Steema/Delphi_Inspect/blob/main/Images/TeeChart_Pro_Banner.png?raw=true) ](https://www.steema.com)
+
