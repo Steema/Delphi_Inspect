@@ -4,8 +4,6 @@
 {**********************************************}
 unit Unit_Info platform;
 
-{.$DEFINE TEECHART_PRO} // Use the "Pro" version of TeeChart
-
 interface
 
 uses
@@ -18,6 +16,12 @@ uses
   FMX.Memo, FMX.ExtCtrls, FMX.TabControl, FMX.Objects, FMX.Styles,
 
   FMXTee.Procs,
+
+  // After FMXTee.Procs, check for "Pro" existence:
+
+  {$IF Declared(TParallelProc)} // <-- this type is only available in the "Pro" version
+  {$DEFINE TEECHART_PRO} // Use the "Pro" version of TeeChart
+  {$ENDIF}
 
   {$IFDEF TEECHART_PRO}
   FMXTee.About,
