@@ -402,7 +402,9 @@
         </DCCReference>
         <DCCReference Include="..\InspectDelphi.pas"/>
         <DCCReference Include="..\Unit_Benchmark_Canvas.pas"/>
-        <DCCReference Include="..\Unit_Utils.pas"/>
+        <DCCReference Include="..\Unit_Utils.pas">
+            <Form>$R *.res</Form>
+        </DCCReference>
         <None Include="..\InspectDefines.inc"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
@@ -830,7 +832,19 @@
                 <DeployFile LocalName="..\Icons_3d\Icon_960x720.png" Configuration="Release" Class="Android_SplashImage960"/>
                 <DeployFile LocalName="..\Icons_3d\Icon_96x96.png" Configuration="Debug" Class="Android_LauncherIcon96"/>
                 <DeployFile LocalName="..\Icons_3d\Icon_96x96.png" Configuration="Release" Class="Android_LauncherIcon96"/>
+                <DeployFile LocalName="..\InspectDefines.inc" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\InspectDefines.inc" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\InspectDefines.inc" Configuration="Release" Class="ProjectFile">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Android\Debug\AndroidManifest.xml" Configuration="Debug" Class="ProjectAndroidManifest"/>
                 <DeployFile LocalName="Android\Debug\libDelphi_Inspect.so" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="Android\Release\AndroidManifest.xml" Configuration="Release" Class="ProjectAndroidManifest"/>
@@ -839,6 +853,18 @@
                 <DeployFile LocalName="Android\Release\styles.xml" Configuration="Release" Class="AndroidSplashStyles"/>
                 <DeployFile LocalName="Icons_3d\Icon_36.png" Configuration="Release" Class="Android_LauncherIcon36"/>
                 <DeployFile LocalName="Icons_3d\Icon_96.png" Configuration="Release" Class="Android_LauncherIcon96"/>
+                <DeployFile LocalName="Linux64\Debug\Delphi_Inspect" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Linux64">
+                        <RemoteName>Delphi_Inspect</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Linux64\Release\Delphi_Inspect" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Linux64">
+                        <RemoteName>Delphi_Inspect</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="New1.inc" Configuration="Debug" Class="ProjectFile"/>
                 <DeployFile LocalName="OSX32\Debug\Delphi_Inspect.entitlements" Configuration="Debug" Class="ProjectOSXEntitlements"/>
                 <DeployFile LocalName="OSX32\Debug\Delphi_Inspect.info.plist" Configuration="Debug" Class="ProjectOSXInfoPList"/>

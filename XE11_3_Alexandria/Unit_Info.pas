@@ -28,12 +28,20 @@ uses
   {$ENDIF}
 
   FMX.Viewport3D, FMX.Platform, FMX.StdCtrls,
-  FMX.TextLayout, InspectDelphi, System.Sensors,
-  System.Sensors.Components, FMXTee.Engine, FMXTee.Chart,
+  FMX.TextLayout, InspectDelphi,
+
+  {$IFNDEF LINUX}
+  System.Sensors,
+  System.Sensors.Components,
+  System.Tether.Manager, System.Tether.AppProfile,
+  {$ENDIF}
+
+  FMXTee.Engine, FMXTee.Chart,
   System.IOUtils, FMXTee.Constants, IPPeerClient, IPPeerServer,
-  System.Tether.Manager, System.Tether.AppProfile, FMXTee.Series,
+  FMXTee.Series,
   FMX.Controls.Presentation, FMX.Edit, FMX.ComboEdit, FMX.ComboTrackBar,
   FMX.ScrollBox, FMX.Memo.Types;
+
 
 type
   TSystemInfoForm = class(TForm)
@@ -50,9 +58,6 @@ type
     ToolBar3: TToolBar;
     CheckBox1: TCheckBox;
     CheckBox2: TCheckBox;
-    LocationSensor1: TLocationSensor;
-    MotionSensor1: TMotionSensor;
-    OrientationSensor1: TOrientationSensor;
     TabDelphi: TTabControl;
     TabSystem: TTabItem;
     MemoSystem: TMemo;
@@ -92,9 +97,6 @@ type
     ChartLocation: TChart;
     TabDatabase: TTabItem;
     MemoDatabase: TMemo;
-    TetheringManager1: TTetheringManager;
-    TetheringAppProfile1: TTetheringAppProfile;
-    TetheringManager2: TTetheringManager;
     TabControlFMX: TTabControl;
     TabFMXInfo: TTabItem;
     TabGesture: TTabItem;
@@ -134,8 +136,6 @@ type
     procedure ButtonShareChartSystemClick(Sender: TObject);
     procedure CheckBox3DSystemChange(Sender: TObject);
     procedure TabControlAboutChange(Sender: TObject);
-    procedure LocationSensor1LocationChanged(Sender: TObject; const OldLocation,
-      NewLocation: TLocationCoord2D);
     procedure ChartGestureTap(Sender: TObject; const Point: TPointF);
     procedure FormTouch(Sender: TObject; const Touches: TTouches;
       const Action: TTouchAction);
@@ -156,7 +156,9 @@ type
 
     DebugBench : Boolean;
 
+    {$IFNDEF LINUX}
     Point : TPointSeries;
+    {$ENDIF}
 
     ITouches : TTouches;
     IAction : TTouchAction;
@@ -169,6 +171,11 @@ type
     {$ENDIF}
 
     procedure RefreshMemory;
+
+    {$IFNDEF LINUX}
+    procedure LocationSensor1LocationChanged(Sender: TObject; const OldLocation,
+      NewLocation: TLocationCoord2D);
+    {$ENDIF}
   public
     { Public declarations }
   end;
@@ -186,6 +193,11 @@ uses
   FMXTee.Editor.Chart,
   {$ENDIF}
   FMXTee.Canvas,
+
+  {$IFNDEF LINUX}
+  Unit_Sensors,
+  {$ENDIF}
+
   Unit_Utils, Unit_Benchmark_Canvas;
 
 procedure TSystemInfoForm.Button1Click(Sender: TObject);
@@ -462,6 +474,11 @@ end;
 
 procedure TSystemInfoForm.FormCreate(Sender: TObject);
 begin
+  {$IFNDEF LINUX}
+  Application.CreateForm(TDataModule1, DataModule1);
+  DataModule1.LocationSensor1.OnLocationChanged := LocationSensor1LocationChanged;
+  {$ENDIF}
+
   // For Mac OSX Screenshots only:
   //Width:=1280-6;
   //Height:=800-2;
@@ -536,9 +553,12 @@ end;
 
 procedure TSystemInfoForm.GyroscopeChange(Sender: TObject);
 begin
-  OrientationSensor1.Active:=Gyroscope.IsChecked;
+  {$IFNDEF LINUX}
+  DataModule1.OrientationSensor1.Active:=Gyroscope.IsChecked;
+  {$ENDIF}
 end;
 
+{$IFNDEF LINUX}
 procedure TSystemInfoForm.LocationSensor1LocationChanged(Sender: TObject;
   const OldLocation, NewLocation: TLocationCoord2D);
 
@@ -577,13 +597,17 @@ begin
     PointSeries.GetHorizAxis.SetMinMax(X-20,X+20);
   end;
 
-  LocationSensor1.Active:=False;
+  DataModule1.LocationSensor1.Active:=False;
 end;
+{$ENDIF}
 
 procedure TSystemInfoForm.OrientationSensor1StateChanged(Sender: TObject);
 begin
   {$IFDEF TEECHART_PRO}
-  Timer1.Enabled:=OrientationSensor1.Active;
+
+  {$IFNDEF LINUX}
+  Timer1.Enabled:=DataModule1.OrientationSensor1.Active;
+  {$ENDIF}
 
   if Assigned(IAbout) then
      IAbout.FloatAnimation2.Enabled:=not Gyroscope.IsChecked;
@@ -689,7 +713,10 @@ end;
 procedure TSystemInfoForm.Timer1Timer(Sender: TObject);
 begin
   Timer1.Enabled:=False;
-  LocationSensor1.Active:=True;
+
+  {$IFNDEF LINUX}
+  DataModule1.LocationSensor1.Active:=True;
+  {$ENDIF}
 end;
 
 procedure TSystemInfoForm.Viewport3D1Resize(Sender: TObject);

@@ -67,3 +67,6 @@ __recovery/
 
 # Boss dependency manager vendor folder https://github.com/HashLoad/boss
 modules/
+XE11_3_Alexandria/Linux64/
+XE11_3_Alexandria/Delphi_Inspect._@emb_.tmp
+XE11_3_Alexandria/Delphi_Inspect.deployproj

@@ -88,7 +88,12 @@ uses
   Data.DBXCommon,
 
   System.SysUtils, System.Diagnostics,
-  System.IOUtils, System.Math, System.Sensors,
+  System.IOUtils, System.Math,
+
+  {$IFNDEF LINUX}
+  System.Sensors,
+  {$ENDIF}
+
   System.TimeSpan, System.DateUtils,
   FMX.Platform, FMX.Forms, FMX.Controls, FMX.Graphics,
   {$IF FireMonkeyVersion>18}
@@ -131,6 +136,10 @@ uses
   REST.Client,
   FireDAC.Stan.Consts,
 
+  {$IFDEF LINUX}
+  {$DEFINE NO_INTERBASE}
+  {$ENDIF}
+
   {$IFDEF D28} // 11.3
   {$IFNDEF CPUX64}
   {$DEFINE NO_INTERBASE}
@@ -142,10 +151,12 @@ uses
   {$ENDIF}
 
   System.ZLib, System.Threading,
+
+  {$IFNDEF LINUX}
   System.Tether.Manager,
   System.Sensors.Components,
-
   System.Bluetooth, System.Bluetooth.Components,
+  {$ENDIF}
 
   FMX.Styles, Unit_Utils, FMXTee.Constants;
 
@@ -446,8 +457,12 @@ begin
   {$ENDIF}
 
   {$IF Defined(CPUX86) or Defined(CPUX64)}
+
+  {$IFNDEF LINUX}
   Add('Default8087CW',IntToHex(Default8087CW,4));
   Add('DefaultMXCSR',IntToHex(DefaultMXCSR,4));
+  {$ENDIF}
+
   {$ENDIF}
 
   Add('HeapAllocFlags',IntToHex(HeapAllocFlags,4));
@@ -514,8 +529,10 @@ begin
   Add('FGetExceptMask',FGetExceptMask);
 
   {$IF defined(CPUX86) or defined(CPUX64)}
+  {$IFNDEF LINUX}
   Add('Get8087CW',Get8087CW);
   Add('GetMXCSR',GetMXCSR);
+  {$ENDIF}
   {$ENDIF}
 
   {$IF defined(CPUARM)}
@@ -1428,6 +1445,7 @@ end;
 
 procedure TInspectDelphi.DoHardware;
 
+  {$IFNDEF LINUX}
   procedure AddSensor(const ASensor:TCustomSensor);
   var c : String;
   begin
@@ -1456,6 +1474,7 @@ procedure TInspectDelphi.DoHardware;
     Add('Serial No',ASensor.SerialNo);
     Add('Unique ID',ASensor.UniqueID);
   end;
+  {$ENDIF}
 
   {$IF FireMonkeyVersion>20}
   procedure AddDevice(DeviceNum:Integer; const ADevice:TDeviceInfo);
@@ -1499,8 +1518,10 @@ var t: Integer;
 begin
   AddHeader('Tethering');
 
+  {$IFNDEF LINUX}
   Add('Adapters',TTetheringAdapters.Adapters);
   Add('Protocols',TTetheringProtocols.Protocols);
+
   Add('Profiles',TTetheringProfiles.Profiles);
 
   AddHeader('Sensors');
@@ -1511,6 +1532,7 @@ begin
 
   for t := 0 to TSensorManager.Current.Count-1 do
       AddSensor(TSensorManager.Current.Sensors[t]);
+  {$ENDIF}
 
   {$IF FireMonkeyVersion>20}
   AddHeader('Devices');
@@ -1523,6 +1545,7 @@ begin
   Add;
 
 
+  {$IFNDEF LINUX}
   // Bluetooth
 
   var Manager:=TBluetoothManager.Current;
@@ -1540,6 +1563,7 @@ begin
     for var d:=0 to Devices.Count-1 do
         Add('#'+d.ToString,Devices[d].DeviceName);
   end;
+  {$ENDIF}
 end;
 
 procedure TInspectDelphi.DoLocale;
@@ -1776,6 +1800,7 @@ begin
 
   {$IFNDEF ANDROID}
   {$IFNDEF NEXTGEN}
+  {$IFNDEF LINUX}
   case GetFPURoundMode of
     rmNearest: Add('FPU Round Mode','Nearest');
     rmDown: Add('FPU Round Mode','Down');
@@ -1791,6 +1816,7 @@ begin
   else
     Add('SSE Round Mode','Truncate');
   end;
+  {$ENDIF !LINUX}
   {$ENDIF !NEXTGEN}
   {$ENDIF !ANDROID}
 
@@ -1804,6 +1830,7 @@ begin
 
   {$IFNDEF ANDROID}
   {$IFNDEF NEXTGEN}
+  {$IFNDEF LINUX}
   case GetPrecisionMode of
     pmSingle: Add('Precision Mode','Single');
     pmReserved: Add('Precision Mode','Reserved');
@@ -1816,6 +1843,7 @@ begin
   Add;
   AddMask(GetSSEExceptionMask,'SSE Exception Mask');
   Add;
+  {$ENDIF !LINUX}
   {$ENDIF !NEXTGEN}
   {$ENDIF !ANDROID}
 

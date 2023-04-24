@@ -20,7 +20,7 @@ object SystemInfoForm: TSystemInfoForm
     Size.Height = 480.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 49.000000000000000000
-    TabIndex = 3
+    TabIndex = 4
     TabOrder = 0
     TabPosition = Top
     OnChange = TabMainChange
@@ -453,7 +453,7 @@ object SystemInfoForm: TSystemInfoForm
       CustomIcon = <
         item
         end>
-      IsSelected = True
+      IsSelected = False
       Size.Width = 127.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
@@ -738,7 +738,7 @@ object SystemInfoForm: TSystemInfoForm
       CustomIcon = <
         item
         end>
-      IsSelected = False
+      IsSelected = True
       Size.Width = 130.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
@@ -872,40 +872,5 @@ object SystemInfoForm: TSystemInfoForm
     OnTimer = Timer1Timer
     Left = 152
     Top = 144
-  end
-  object LocationSensor1: TLocationSensor
-    ActivityType = Other
-    UsageAuthorization = WhenInUse
-    OnLocationChanged = LocationSensor1LocationChanged
-    Left = 304
-    Top = 288
-  end
-  object MotionSensor1: TMotionSensor
-    Left = 472
-    Top = 144
-  end
-  object OrientationSensor1: TOrientationSensor
-    Left = 312
-    Top = 168
-  end
-  object TetheringManager1: TTetheringManager
-    Text = 'TetheringManager1'
-    AllowedAdapters = 'Bluetooth'
-    Left = 480
-    Top = 208
-  end
-  object TetheringAppProfile1: TTetheringAppProfile
-    Manager = TetheringManager1
-    Text = 'TetheringAppProfile1'
-    Actions = <>
-    Resources = <>
-    Left = 488
-    Top = 280
-  end
-  object TetheringManager2: TTetheringManager
-    Text = 'TetheringManager2'
-    AllowedAdapters = 'Network'
-    Left = 304
-    Top = 224
   end
 end
