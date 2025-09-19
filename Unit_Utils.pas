@@ -251,6 +251,12 @@ begin
   if CompilerVersion=35 then
      result:='XE11.3 Alexandria'
   else
+  if CompilerVersion=36 then
+     result:='XE12.3 Athens'
+  else
+  if CompilerVersion=37 then
+     result:='XE13.0 Florence'
+  else
      result:='?';
 end;
 

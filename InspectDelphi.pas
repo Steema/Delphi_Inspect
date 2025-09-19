@@ -804,6 +804,15 @@ procedure TInspectDelphi.DoFireMonkey;
     end;
   end;
 
+  function DefaultFrameRate:Double;
+  begin
+    {$IF CompilerVersion >= 37}
+    Result := GlobalPreferredFramesPerSecond;
+    {$ELSE}
+    Result := TAnimation.DefaultAniFrameRate;
+    {$ENDIF}
+  end;
+
 var
   ScreenService: IFMXScreenService;
   tmpStyle : TStyleDescription;
@@ -1126,11 +1135,14 @@ begin
   Add('PopupCount',GetPopupCount);
 
   {$IF FireMonkeyVersion>20}
-  Add('Default Animation Frame Rate',TAnimation.DefaultAniFrameRate);
-  Add('Animation Frame Rate',TAnimation.AniFrameRate);
+  Add('Default Animation Frame Rate', DefaultFrameRate);
 
+  {$IF FireMonkeyVersion<290}
+  Add('Animation Frame Rate',TAnimation.AniFrameRate);
   if Assigned(TAnimation.AniThread) then
      Add('Animation Thread Timer Interval',TAnimation.AniThread.Interval);
+  {$ENDIF}
+
   {$ENDIF}
 
   AddHeader('Canvas');
@@ -1905,6 +1917,10 @@ begin
 end;
 
 procedure TInspectDelphi.DoDatabase;
+{$IF CompilerVersion>=37}
+{$I FireDAC.Stan.Config.inc}   // <-- add path:  $(bds)\source\data\firedac
+{$ENDIF}
+
 var t: Integer;
 begin
   {$IFNDEF NO_INTERBASE}
