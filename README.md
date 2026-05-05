@@ -1,7 +1,7 @@
 # Delphi_Inspect
 Delphi Firemonkey Canvas benchmarking and general information.  Made with [TeeChart](https://www.steema.com).
 
-For Embarcadero RAD Studio version XE6 to [XE13.0 Florence](https://www.embarcadero.com/es/products/rad-studio/whats-new-in-13-florence).
+For Embarcadero RAD Studio version XE6 to [XE13.1 Florence](https://www.embarcadero.com/es/products/rad-studio/whats-new-in-13-florence).
 
 This utility application reports Delphi system information including most of the constants and global variables found in Delphi RTL and Firemonkey libraries.
 
