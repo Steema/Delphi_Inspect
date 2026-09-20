@@ -450,6 +450,8 @@ begin
   end;
 
   Add('Test8087',Test8087);
+
+  Add('TestAVX',TestAVX);
   {$ENDIF}
 
   {$IF Defined(CPUARM)}

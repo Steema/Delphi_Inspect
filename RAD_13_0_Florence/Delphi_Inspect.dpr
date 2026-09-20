@@ -3,7 +3,6 @@ program Delphi_Inspect;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  FMX.Skia,
   FMX.Types,
   Unit_Info in 'Unit_Info.pas' {SystemInfoForm},
   InspectDelphi in '..\InspectDelphi.pas',
@@ -13,7 +12,6 @@ uses
 {$R *.res}
 
 begin
-  GlobalUseSkia := True;
   //GlobalUseGPUCanvas:=True;
   //GlobalUseHWEffects:=True;
   //GlobalUseDirect2D:=True;
